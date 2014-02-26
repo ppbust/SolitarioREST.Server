@@ -46,11 +46,15 @@ public class LoginBean {
     }
 
     public boolean isLogged() {
-        return logged;
+        return this.logged;
     }
 
     public boolean isAdministrator() {
         return this.user.isAdministrator();
+    }
+    
+    public boolean isLoggedUser(){
+        return this.logged && !this.user.isAdministrator();
     }
 
     public String login() {

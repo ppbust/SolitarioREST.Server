@@ -13,5 +13,10 @@
 	<p><h:outputText rendered="#{loginBean.logged}" value="Bienvenido: #{loginBean.user.firstName}" /></p>
 	<p><h:link outcome="./login.xhtml" value="login" /></p>
 	<p><h:link outcome="./register.xhtml" value="register" /></p>
+	
+    <p><h:link outcome="./security/admin/admin.xhtml" value="admin" rendered="#{loginBean.administrator}"/></p>
+    
+    <p><h:link outcome="./security/user/user.xhtml" value="user" rendered="#{loginBean.loggedUser}"/></p>
+	
 </h:body>
 </html>
