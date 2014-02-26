@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Solitario JSF</title>
+</h:head>
+<h:body>
+	<h1>Login</h1>
+	<h:form id="form">
+        <h:message for="form" style="color:red" />
+		<h:panelGrid id="panel" columns="3">
+			<h:outputText value="Nick:" />
+			<h:inputText id="nick" value="#{loginBean.user.nick}" required="true"
+				requiredMessage="Nick es obligatorio" />
+			<h:message for="nick" style="color:red" />
+
+			<h:outputText value="Password:" />
+			<h:inputSecret id="password" value="#{loginBean.password}"
+				required="true" requiredMessage="Clave es obligatoria"
+				validatorMessage="Clave mayor que 8 car.">
+				<f:validateLength minimum="8" />
+			</h:inputSecret>
+			<h:message for="password" style="color:red" />
+			
+			<h:commandButton value="Reset" type="reset" />
+			<h:commandButton value="Submit" action="#{loginBean.login}"></h:commandButton>
+			<h:outputText value=" " />
+		</h:panelGrid>
+	</h:form>
+	<p><a href="./home.jsf">Volver</a></p>
+</h:body>
+</html>

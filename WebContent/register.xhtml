@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:u="http://java.sun.com/jsf/composite/utils">
+<h:head>
+	<title>Solitario JSF</title>
+</h:head>
+<h:body>
+	<h1>Login</h1>
+	<h:form id="form">
+        <h:message for="form" style="color:red" />
+	    <u:inputText id="Nick" value="#{loginBean.user.nick}" required="true"/>
+	    <u:inputSecret id="Password" value="#{loginBean.user.password}" value2="#{loginBean.password}" />
+        <u:inputText id="FirstName" value="#{loginBean.user.firstName}" required="true"/>
+        <u:inputText id="LastName" value="#{loginBean.user.lastName}" required="true"/>
+        <u:inputText id="Age" value="#{loginBean.user.age}" required="false"/>
+        <u:selectOneMenu id="Gender" value="#{loginBean.user.gender}"  values="#{loginBean.genders}"/>
+        <u:inputText id="Country" value="#{loginBean.user.country}" required="true"/>
+        <h:commandButton value="Submit" action="#{loginBean.register()}"/>
+	</h:form>
+	<p><a href="./home.jsf">Volver</a></p>
+</h:body>
+</html>
